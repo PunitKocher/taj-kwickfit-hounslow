@@ -783,7 +783,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-md-4">
-                                <button class="thm-btn" type="submit">Submit now</button>
+                                <button class="thm-btn" onclick="submitForm()" type="button">Submit now</button>
                             </div>
                             <div class="col-lg-9 col-md-12">
                                 <div class="text">
@@ -1004,7 +1004,36 @@
 
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
+<script>
+    function submitForm(){
+        console.log('submitting');
+        var data = {}
+        data["name"] = $("#name").val();
+        data["email"] = $("#email").val();
+        data["regNo"] = $("#regNo").val();
+        data["service"] = $("#service").val();
+        data["date"] = $("#date").val();
+        data["time"] = $("#time").val();
+        data["date"] = $("#register_password").val();
+        $("#submitbtn").prop("disabled", true);
 
+        $.ajax({
+                 type: "POST",
+                 contentType: "application/json",
+                 url: "localhost:8080/appointment",
+                 data: JSON.stringify(data),
+                 dataType: 'json',
+                 timeout: 600000,
+                 success: function (data) {
+                     console.log("DONE");
+                 },
+                 error: function (e) {
+                     console.log("ERROR: ", e);
+                     display(e);
+                 }
+        });
+    }
+</script>
 
 
 
