@@ -719,23 +719,23 @@
                                     <label>Name*</label>
                                 </div>
                                 <div class="input-box">
-                                    <input type="text" name="name" placeholder="">
+                                    <input required type="text" id="name" name="name" placeholder="">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="input-label">
                                     <label>Email*</label>
                                 </div>
-                                <div class="input-box">
-                                    <input type="email" name="mail" placeholder="">
+                                <div required class="input-box">
+                                    <input required type="email" id="email" name="mail" placeholder="">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div required class="col-md-4">
                                 <div class="input-label">
-                                    <label>Make / Model</label>
+                                    <label>Mobile</label>
                                 </div>
-                                <div class="input-box">
-                                    <input type="text" name="model" placeholder="">
+                                <div required class="input-box">
+                                    <input required type="text" id="phone" name="model" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -745,16 +745,18 @@
                                     <label>Services*</label>
                                 </div>
                                 <div class="input-box">
-                                    <select class="selectmenu">
+                                    <select required id="serviceType" class="selectmenu">
                                         <option selected="selected">Select services</option>
-                                        <option>Wheel Works</option>
-                                        <option>Painting Works</option>
-                                        <option>Air Conditioner</option>
-                                        <option>Water Service</option>
-                                        <option>Engine Works</option>
-                                        <option>lube Oil & Filters</option>
+                                        <option>Full Service</option>
+                                        <option>MOT</option>
+                                        <option>MOT + Full Service</option>
+                                        <option>Tires</option>
+                                        <option>Minor Service</option>
+                                        <option>Diagnostic Check (Free)</option>
                                         <option>Brake Repairs</option>
-                                        <option>Belts & Hoses</option>
+                                        <option>Engine works</option>
+                                        <option>Paint works</option>
+                                        <option>Other</option>
                                     </select>
                                 </div>
                             </div>
@@ -763,7 +765,7 @@
                                     <label>Schedule Date</label>
                                 </div>
                                 <div class="input-box">
-                                    <input type="text" name="date" placeholder="" id="datepicker">
+                                    <input type="date" id="date" name="date" placeholder="" id="datepicker">
                                     <div class="icon-box">
                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                     </div>
@@ -774,12 +776,42 @@
                                     <label>Schedule Time</label>
                                 </div>
                                 <div class="input-box">
-                                    <input type="text" name="time" placeholder="">
+                                    <input type="time" id="time" name="time" placeholder="">
                                     <div class="icon-box">
                                         <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-label">
+                                    <label>Reg No*</label>
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" id="regNo" name="name" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-label">
+                                    <label>Make*</label>
+                                </div>
+                                <div class="input-box">
+                                    <select id="make" class="selectmenu">
+                                        <option selected="selected">Select Make</option>
+                                        <option>BMW</option>
+                                        <option>Mercedes</option>
+                                        <option>Jaguar</option>
+                                        <option>Land Rover</option>
+                                        <option>Vauxhall</option>
+                                        <option>KIA</option>
+                                        <option>Maruti</option>
+                                        <option>Peugeot</option>
+                                        <option>Volkswagen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-md-4">
@@ -1006,30 +1038,30 @@
 <script src="js/custom.js"></script>
 <script>
     function submitForm(){
-        console.log('submitting');
+        console.log('alering');
         var data = {}
         data["name"] = $("#name").val();
         data["email"] = $("#email").val();
         data["regNo"] = $("#regNo").val();
-        data["service"] = $("#service").val();
+        data["phone"] = $("#phone").val();
+        data["serviceType"] = $("#serviceType").val();
         data["date"] = $("#date").val();
         data["time"] = $("#time").val();
-        data["date"] = $("#register_password").val();
+        data["make"] = $("#make").val();
         $("#submitbtn").prop("disabled", true);
 
         $.ajax({
                  type: "POST",
                  contentType: "application/json",
-                 url: "localhost:8080/appointment",
+                 url: "http://admin.tajkwickfit.com/appointment/create",
                  data: JSON.stringify(data),
                  dataType: 'json',
                  timeout: 600000,
                  success: function (data) {
-                     console.log("DONE");
+                     alert('Your request is successfully received, please wait for our confirmation email');
                  },
                  error: function (e) {
-                     console.log("ERROR: ", e);
-                     display(e);
+                    alert('Some technical error occurred, please try after some time');
                  }
         });
     }
