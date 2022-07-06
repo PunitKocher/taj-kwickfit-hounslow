@@ -125,7 +125,12 @@ function revolutionSliderActiver () {
 	};  
 }
 
-
+//=== Prealoder===
+function prealoader() {
+    if($('.preloader').length){
+        $('.preloader').delay(0).fadeOut(500);
+    }
+}
 
 //====Main menu===
 function mainmenu() {
@@ -175,12 +180,7 @@ function scrollToTop() {
 
 
 
-//=== Prealoder===
-function prealoader() {
-    if($('.preloader').length){
-        $('.preloader').delay(2000).fadeOut(500);
-    }
-}
+
 
 
 
