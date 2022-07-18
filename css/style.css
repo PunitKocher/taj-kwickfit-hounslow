@@ -660,10 +660,22 @@ select:focus {
 
 .mainmenu-area .logo {
     display: inline-block;
-    padding-right: 150px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     position: relative;
+    width: 100%;
+    max-width: 90px;
+}
+.white-cchange{
+    filter: ;
+}
+.flex-wraper-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-wraper-container:after, .flex-wraper-container:before{
+ content: none !important;
 }
 
 .mainmenu-area .logo a {
@@ -8373,6 +8385,30 @@ select:focus {
     padding-bottom: 30px;
 }
 
+@media screen and (max-width:992px){
+    .flex-wraper-container{
+        flex-wrap: wrap;
+        justify-content: end;
+    }
+    .appoinment-button {
+        transform: translateY(50%);
+    }
+    .logo.pull-left {
+        margin-right: 1.5rem;
+    }
+}
+@media screen and (max-width:768px){
+    .flex-wraper-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .appoinment-button {
+        transform: translateY(0%);
+    }
+    .logo.pull-left {
+        margin-right: 1.5rem;
+    }
+}
 
 
 
