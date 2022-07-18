@@ -1,0 +1,40 @@
+#appoinmentArea {
+    .modal-header {
+        padding-left: 7rem;
+        padding-right: 7rem;
+        h2{
+            font-weight: 700;
+        }
+    }
+
+    .modal-body {
+        margin: 0 4rem 4rem 4rem;
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+
+        label {
+            color: #222222;
+        }
+
+        input,
+        select {
+            height: 45px;
+            margin-bottom: 1rem;
+            background: none !important;
+        }
+    }
+
+    #submitForm {
+        margin-bottom: 2rem !important;
+        height: 45px;
+        width: max-content;
+        background: #222222;
+        border: none;
+        padding: 0 4rem;
+        text-transform: uppercase;
+    }
+
+    
+}
