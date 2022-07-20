@@ -8397,16 +8397,39 @@ select:focus {
         margin-right: 1.5rem;
     }
 }
+.appoinment-button.mob{
+    display: none;
+}
 @media screen and (max-width:768px){
     .flex-wraper-container{
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
     .appoinment-button {
         transform: translateY(0%);
     }
     .logo.pull-left {
         margin-right: 1.5rem;
+    }
+    .appoinment-button.tab{
+        display: none;
+    }
+    .appoinment-button.mob{
+        display: block;
+    }
+    .mainmenu-area .logo img {
+        width: 80px;
+    }
+    #appoinmentArea .modal-body {
+        margin: 0 0rem 4rem 0rem !important;
+    }
+    #appoinmentArea .modal-header {
+        padding-left: 3rem !important;
+        padding-right: 4rem !important;
+    }
+    #appoinmentArea .modal-dialog {
+        width: 95%;
+        margin: 0 auto;
     }
 }
 

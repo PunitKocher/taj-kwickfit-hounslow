@@ -1085,11 +1085,15 @@
 ***/ 
 .mainmenu-area .logo {
     display: inline-block;
-    padding-right: 30px;
-    padding-top: 23px;
-    padding-bottom: 23px;
+    padding-top: 0;
+    padding-bottom: 0;
     padding-left: 0;
     z-index: 9999999;
+    max-width: 18%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(25%, 15px);
 }
 .search-box {} 
 .outer-search-box {
@@ -1138,14 +1142,17 @@
     border-top: none;
 }    
 .main-menu .navbar-header{
-    position:relative;
-    float:none;
-    display:block;
+    position: relative;
+    float: none;
     text-align: right;
-    width:100%;
     padding: 0;
-    right:0px;
-    z-index:12;
+    right: 0px;
+    z-index: 12;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-left: 9rem;
 }        
 .main-menu .navbar-header .navbar-toggle {
     display: inline-block;
@@ -1392,7 +1399,7 @@
 ***/       
 .model-area .single-model-item {
     padding-bottom: 40px;
-    text-align: center;
+    text-align: center !important;
 } 
 
     
